@@ -229,7 +229,7 @@ pos = data["POS_ALL_scene_dense"]    # (N, 3)`})})]})]})]})]})]}),c.jsxs("div",{
   note = {early access}，
   url = {https://arxiv.org/abs/2605.26928}
 }`},{key:"2026StructureAwareBeamPrediction",title:"Structure-Aware Multimodal LLM Framework for Trustworthy Near-Field Beam Prediction",image:"images/Paper/Paper1.png",bibtex:`@article{2026StructureAwareBeamPrediction,
-  author = {Li, M. and Lu, Q. and Tian, J. and Hu, H. and Han, Y. and Li, X. and Wen, C.-K. and Jin, S.},
+  author = {Li, M. and Lu, Q. and Tian, J. and Hu, H. and Han, Y. and Li, X. and Wen, C.-K.},
   title = {{Structure-Aware Multimodal LLM Framework for Trustworthy Near-Field Beam Prediction}},
   journal = {IEEE Transactions on Vehicular Technology},
   year = {2026},
