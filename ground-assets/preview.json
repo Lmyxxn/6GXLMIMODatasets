@@ -1,0 +1,415 @@
+{
+  "dataset": "XLMIMO_V8_7Layouts_10ms_RT22 + speed20_extension",
+  "description": "Ground-level Sionna RT; compact static preview, not the full dataset",
+  "array_antennas": 4096,
+  "layouts": 7,
+  "channel_samples": 22,
+  "historical_samples": 10,
+  "future_samples": 12,
+  "sensing_interval_ms": 10,
+  "analysis": [
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 1,
+      "trajectory_count": 797,
+      "change_db_median": -22.676655,
+      "correlation_median": 0.999855,
+      "shape_error_db_median": -35.36913
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 5,
+      "trajectory_count": 797,
+      "change_db_median": -9.736657,
+      "correlation_median": 0.986062,
+      "shape_error_db_median": -15.577944
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 10,
+      "trajectory_count": 797,
+      "change_db_median": -4.222172,
+      "correlation_median": 0.973825,
+      "shape_error_db_median": -12.867972
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 20,
+      "trajectory_count": 797,
+      "change_db_median": -0.188512,
+      "correlation_median": 0.946346,
+      "shape_error_db_median": -9.811769
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 30,
+      "trajectory_count": 797,
+      "change_db_median": 1.61493,
+      "correlation_median": 0.924464,
+      "shape_error_db_median": -8.37534
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 40,
+      "trajectory_count": 797,
+      "change_db_median": 1.66257,
+      "correlation_median": 0.89498,
+      "shape_error_db_median": -7.01125
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 50,
+      "trajectory_count": 797,
+      "change_db_median": 2.196479,
+      "correlation_median": 0.865005,
+      "shape_error_db_median": -5.990014
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 60,
+      "trajectory_count": 797,
+      "change_db_median": 2.606737,
+      "correlation_median": 0.834681,
+      "shape_error_db_median": -5.181165
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 70,
+      "trajectory_count": 797,
+      "change_db_median": 1.968575,
+      "correlation_median": 0.804971,
+      "shape_error_db_median": -4.534308
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 80,
+      "trajectory_count": 797,
+      "change_db_median": 1.964398,
+      "correlation_median": 0.77551,
+      "shape_error_db_median": -3.994799
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 90,
+      "trajectory_count": 797,
+      "change_db_median": 1.381806,
+      "correlation_median": 0.745981,
+      "shape_error_db_median": -3.530949
+    },
+    {
+      "scenario": "edge_transition",
+      "horizon_ms": 100,
+      "trajectory_count": 797,
+      "change_db_median": 1.380266,
+      "correlation_median": 0.71366,
+      "shape_error_db_median": -3.091939
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 1,
+      "trajectory_count": 797,
+      "change_db_median": -17.655578,
+      "correlation_median": 0.9999,
+      "shape_error_db_median": -36.979547
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 5,
+      "trajectory_count": 797,
+      "change_db_median": -3.950535,
+      "correlation_median": 0.998914,
+      "shape_error_db_median": -26.633292
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 10,
+      "trajectory_count": 797,
+      "change_db_median": 0.927206,
+      "correlation_median": 0.997318,
+      "shape_error_db_median": -22.710908
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 20,
+      "trajectory_count": 797,
+      "change_db_median": 3.755894,
+      "correlation_median": 0.989573,
+      "shape_error_db_median": -16.830686
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 30,
+      "trajectory_count": 797,
+      "change_db_median": 3.996518,
+      "correlation_median": 0.97726,
+      "shape_error_db_median": -13.471505
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 40,
+      "trajectory_count": 797,
+      "change_db_median": 3.960089,
+      "correlation_median": 0.960414,
+      "shape_error_db_median": -11.10108
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 50,
+      "trajectory_count": 797,
+      "change_db_median": 3.346707,
+      "correlation_median": 0.938678,
+      "shape_error_db_median": -9.248747
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 60,
+      "trajectory_count": 797,
+      "change_db_median": 2.958596,
+      "correlation_median": 0.912294,
+      "shape_error_db_median": -7.754179
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 70,
+      "trajectory_count": 797,
+      "change_db_median": 3.12065,
+      "correlation_median": 0.881572,
+      "shape_error_db_median": -6.520252
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 80,
+      "trajectory_count": 797,
+      "change_db_median": 3.306099,
+      "correlation_median": 0.847325,
+      "shape_error_db_median": -5.496892
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 90,
+      "trajectory_count": 797,
+      "change_db_median": 3.347313,
+      "correlation_median": 0.809759,
+      "shape_error_db_median": -4.630757
+    },
+    {
+      "scenario": "stable_los",
+      "horizon_ms": 100,
+      "trajectory_count": 797,
+      "change_db_median": 3.319827,
+      "correlation_median": 0.76849,
+      "shape_error_db_median": -3.878278
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 1,
+      "trajectory_count": 796,
+      "change_db_median": -4.197403,
+      "correlation_median": 0.999873,
+      "shape_error_db_median": -35.936928
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 5,
+      "trajectory_count": 796,
+      "change_db_median": 1.301742,
+      "correlation_median": 0.999678,
+      "shape_error_db_median": -31.913361
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 10,
+      "trajectory_count": 796,
+      "change_db_median": -2.704198,
+      "correlation_median": 0.999402,
+      "shape_error_db_median": -29.224664
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 20,
+      "trajectory_count": 796,
+      "change_db_median": 0.045811,
+      "correlation_median": 0.998636,
+      "shape_error_db_median": -25.644796
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 30,
+      "trajectory_count": 796,
+      "change_db_median": 1.265683,
+      "correlation_median": 0.99762,
+      "shape_error_db_median": -23.228952
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 40,
+      "trajectory_count": 796,
+      "change_db_median": 4.414161,
+      "correlation_median": 0.996435,
+      "shape_error_db_median": -21.47733
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 50,
+      "trajectory_count": 796,
+      "change_db_median": 0.686821,
+      "correlation_median": 0.995152,
+      "shape_error_db_median": -20.144826
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 60,
+      "trajectory_count": 796,
+      "change_db_median": 4.153168,
+      "correlation_median": 0.993822,
+      "shape_error_db_median": -19.094843
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 70,
+      "trajectory_count": 796,
+      "change_db_median": 2.703014,
+      "correlation_median": 0.99243,
+      "shape_error_db_median": -18.21514
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 80,
+      "trajectory_count": 796,
+      "change_db_median": 2.285012,
+      "correlation_median": 0.990542,
+      "shape_error_db_median": -17.252281
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 90,
+      "trajectory_count": 796,
+      "change_db_median": 3.643339,
+      "correlation_median": 0.988539,
+      "shape_error_db_median": -16.422321
+    },
+    {
+      "scenario": "stable_nlos",
+      "horizon_ms": 100,
+      "trajectory_count": 796,
+      "change_db_median": 3.253592,
+      "correlation_median": 0.986311,
+      "shape_error_db_median": -15.655961
+    }
+  ],
+  "edge_visibility": [
+    {
+      "horizon_ms": 0,
+      "center_los_fraction": 1.0,
+      "physical_los_fraction_median": 0.609375
+    },
+    {
+      "horizon_ms": 10,
+      "center_los_fraction": 1.0,
+      "physical_los_fraction_median": 0.578125
+    },
+    {
+      "horizon_ms": 20,
+      "center_los_fraction": 1.0,
+      "physical_los_fraction_median": 0.546875
+    },
+    {
+      "horizon_ms": 30,
+      "center_los_fraction": 0.9523212045169385,
+      "physical_los_fraction_median": 0.515625
+    },
+    {
+      "horizon_ms": 40,
+      "center_los_fraction": 0.4918444165621079,
+      "physical_los_fraction_median": 0.5
+    },
+    {
+      "horizon_ms": 50,
+      "center_los_fraction": 0.0,
+      "physical_los_fraction_median": 0.484375
+    },
+    {
+      "horizon_ms": 60,
+      "center_los_fraction": 0.0,
+      "physical_los_fraction_median": 0.4375
+    },
+    {
+      "horizon_ms": 70,
+      "center_los_fraction": 0.0,
+      "physical_los_fraction_median": 0.421875
+    },
+    {
+      "horizon_ms": 80,
+      "center_los_fraction": 0.0,
+      "physical_los_fraction_median": 0.390625
+    },
+    {
+      "horizon_ms": 90,
+      "center_los_fraction": 0.0,
+      "physical_los_fraction_median": 0.359375
+    },
+    {
+      "horizon_ms": 100,
+      "center_los_fraction": 0.0,
+      "physical_los_fraction_median": 0.328125
+    }
+  ],
+  "replay": {
+    "trajectory": "L00_edge_v20_000",
+    "scenario": "edge_transition",
+    "speed_mps": 20,
+    "frames": [
+      {
+        "horizon_ms": 0,
+        "image": "edge_00.jpg"
+      },
+      {
+        "horizon_ms": 10,
+        "image": "edge_01.jpg"
+      },
+      {
+        "horizon_ms": 20,
+        "image": "edge_02.jpg"
+      },
+      {
+        "horizon_ms": 30,
+        "image": "edge_03.jpg"
+      },
+      {
+        "horizon_ms": 40,
+        "image": "edge_04.jpg"
+      },
+      {
+        "horizon_ms": 50,
+        "image": "edge_05.jpg"
+      },
+      {
+        "horizon_ms": 60,
+        "image": "edge_06.jpg"
+      },
+      {
+        "horizon_ms": 70,
+        "image": "edge_07.jpg"
+      },
+      {
+        "horizon_ms": 80,
+        "image": "edge_08.jpg"
+      },
+      {
+        "horizon_ms": 90,
+        "image": "edge_09.jpg"
+      },
+      {
+        "horizon_ms": 100,
+        "image": "edge_10.jpg"
+      }
+    ],
+    "source": "Saved V8 workbench capture; these are real preview frames, not new RT solves"
+  },
+  "provenance": {
+    "analysis": "analysis/v8_temporal_horizon_summary.csv",
+    "visibility": "analysis/v8_edge_los_visibility_summary.json",
+    "replay": "output/v8_web_recording_20261013/recording.json",
+    "cohort_note": "Diagnostic curves summarize 797 trajectories per scenario; they are not results for all 4,780 trajectories."
+  }
+}
