@@ -1,58 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ground-level XL-MIMO multimodal channel dataset preview: Sionna RT, sensing replay, and channel-evolution diagnostics.">
-  <title>Ground XL-MIMO Dataset | 6GXLMIMODatasets</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ground-level XL-MIMO channel dataset preview with Sionna RT scenes, multimodal sensing, and channel-evolution diagnostics.">
+  <title>Ground-level Dataset | 6G XL-MIMO Datasets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ground.css">
   <script defer src="ground.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Return to dataset homepage"><span class="brand-mark">6G</span><span>XL-MIMO <strong>Datasets</strong></span></a>
-    <nav aria-label="Page navigation"><a href="#overview">Overview</a><a href="#replay">Sample replay</a><a href="#diagnostics">Diagnostics</a><a class="back-link" href="index.html">← Main site</a></nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">6G XL-MIMO Datasets</a>
+      <nav aria-label="Page navigation">
+        <a href="index.html">Overview</a>
+        <a class="active" href="ground.html" aria-current="page">Ground-level Dataset</a>
+        <a href="index.html">Back to Main Site</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero wrap" id="overview">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="signal-dot"></span> NEW DATASET PAGE <span class="eyebrow-rule"></span> GROUND-LEVEL CHANNELS</p>
-        <h1>Ground-level <em>XL-MIMO</em><br>channel dataset</h1>
-        <p class="lead">A compact view of the current Sionna RT ground dataset: spatially non-stationary channels, synchronized environment sensing, and mobility-driven propagation changes.</p>
-        <div class="hero-tags"><span>Sionna RT</span><span>Near-field array</span><span>RGB · LiDAR · Position</span><span>22 wireless samples</span></div>
-        <div class="hero-actions"><a class="button primary" href="#replay">Explore a trajectory <span aria-hidden="true">↗</span></a><a class="button subtle" href="#diagnostics">See channel evolution ↓</a></div>
+  <main class="site-main">
+    <section class="panel intro" id="overview">
+      <h1>Ground-level XL-MIMO Dataset</h1>
+      <p>This page visualizes a representative part of our current Sionna RT ground-level dataset. It shows an edge-transition trajectory, synchronized sensing views, and measured CSI evolution across three propagation scenarios.</p>
+      <div class="intro-facts" aria-label="Dataset specifications">
+        <div><strong>7</strong><span>Scene layouts</span></div>
+        <div><strong>64 &times; 64</strong><span>Physical array</span></div>
+        <div><strong>10 + 12</strong><span>Historical + future CSI</span></div>
+        <div><strong>10 ms</strong><span>Sensing interval</span></div>
       </div>
-      <figure class="hero-figure"><img src="ground-assets/layout_clip.jpg" alt="Captured V8 ground-dataset workbench with ray tracing, RGB and LiDAR for one edge-transition trajectory"><figcaption>Recorded V8 example · Layout 00 · edge transition · 20 m/s</figcaption></figure>
     </section>
 
-    <section class="facts wrap" aria-label="Dataset specifications">
-      <div><strong>7</strong><span>scene layouts</span></div><div><strong>64 × 64</strong><span>physical array</span></div><div><strong>22</strong><span>saved CSI instants</span></div><div><strong>10 ms</strong><span>sensing interval</span></div>
+    <section class="panel" id="scene">
+      <h2>Scene and Mobility Visualization</h2>
+      <p class="section-description">A saved V8 workbench view shows the ground layout, user movement, Sionna RT propagation, and synchronized RGB and LiDAR sensing for one representative trajectory.</p>
+      <figure class="figure-card scene-figure">
+        <img src="ground-assets/layout_clip.jpg" alt="Saved V8 ground-level Sionna RT workbench showing the scene, rays, RGB views and LiDAR">
+        <figcaption>Layout 00, edge transition, 20 m/s. This is a recorded sample, not a live ray-tracing service.</figcaption>
+      </figure>
     </section>
 
-    <section class="section wrap" id="replay">
-      <div class="section-head"><div><p class="eyebrow">01 / REPRESENTATIVE TRAJECTORY</p><h2>One scene, moving through time.</h2><p>Step through a saved V8 edge-transition capture. The three rows show the same instant: Sionna RT rays, RGB views, and LiDAR. This is a screen-recorded sample, not an on-demand ray-tracing service.</p></div><span class="section-index">01</span></div>
-      <div class="replay-card">
-        <div class="replay-top"><div><span class="live-mark"></span><strong>L00_edge_v20_000</strong><span class="muted-separator">/</span><span>Edge transition</span></div><span class="frame-badge" id="frame-badge">t = 0 ms</span></div>
-        <img id="replay-image" src="ground-assets/edge_00.jpg" alt="Saved V8 dataset workbench at the selected time">
-        <div class="replay-controls"><button id="play-button" type="button" aria-label="Play trajectory">▶</button><label class="range-label" for="frame-range">Prediction horizon</label><input id="frame-range" type="range" min="0" max="10" step="1" value="0" aria-label="Select saved sensing frame"><strong id="frame-time">0 ms</strong></div>
+    <section class="panel" id="replay">
+      <h2>Multimodal Trajectory Visualization</h2>
+      <p class="section-description">Move through the saved frames of trajectory <strong>L00_edge_v20_000</strong>. Each frame shows the ray-tracing and sensing views captured at the selected instant.</p>
+      <div class="figure-card replay-card">
+        <div class="figure-title">Edge transition <span id="frame-badge">t = 0 ms</span></div>
+        <img id="replay-image" src="ground-assets/edge_00.jpg" alt="Saved V8 edge-transition workbench at 0 ms">
+        <div class="replay-controls">
+          <button id="play-button" type="button" aria-label="Play trajectory">&#9654;</button>
+          <label for="frame-range">Prediction horizon</label>
+          <input id="frame-range" type="range" min="0" max="10" step="1" value="0" aria-label="Select saved sensing frame">
+          <strong id="frame-time">0 ms</strong>
+        </div>
         <div class="ticks" aria-hidden="true"><span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100 ms</span></div>
       </div>
-      <p class="caption-note">Source: saved V8 browser recording. Future sensing frames are shown for dataset inspection; they are <strong>not</strong> available to a one-shot predictor at t = 0.</p>
+      <p class="note">Future sensing frames are displayed for dataset inspection only. They are not available to a one-shot predictor at t = 0.</p>
     </section>
 
-    <section class="section diagnostics-section" id="diagnostics"><div class="wrap">
-      <div class="section-head"><div><p class="eyebrow">02 / CHANNEL EVOLUTION</p><h2>How quickly does the channel change?</h2><p>Measured CSI-to-CSI diagnostics across prediction horizons. These are properties of the data, <strong>not prediction NMSE</strong>.</p></div><span class="section-index">02</span></div>
-      <div class="chart-layout"><div class="chart-card"><div class="chart-heading"><div><h3 id="metric-title">Channel correlation</h3><p id="metric-description">Median normalized complex-channel correlation, relative to the prediction start.</p></div><label>Metric<select id="metric-select"><option value="correlation_median">Correlation</option><option value="change_db_median">Relative change (dB)</option><option value="shape_error_db_median">Shape error (dB)</option></select></label></div><div id="evolution-chart" class="chart" role="img" aria-label="Channel evolution across stable LoS, stable NLoS and edge transition"></div><div class="legend"><span><i class="los"></i>Stable LoS</span><span><i class="nlos"></i>Stable NLoS</span><span><i class="edge"></i>Edge transition</span></div></div>
-      <aside class="insight-card"><p class="eyebrow">WHAT THE DATA SHOWS</p><div class="insight-number" id="edge-corr">—</div><p class="insight-label">Edge-transition median correlation at 100 ms</p><div class="hairline"></div><h3>Not all antennas see the same paths.</h3><p>For the edge cohort, center-link LoS can disappear while some physical subarrays retain visibility. The line below is the median fraction of subarrays with physical LoS.</p><div id="visibility-chart" class="mini-chart" role="img" aria-label="Edge-transition array LoS visibility across the horizon"></div><p class="tiny-note">Center-link and array-wide visibility are distinct quantities.</p></aside></div>
-      <p class="source-line">Diagnostic cohort: 797 trajectories per scenario. Statistics use stored CSI at 1, 5, 10, …, 100 ms. They do not summarize every trajectory in the full dataset.</p>
-    </div></section>
+    <section class="panel" id="diagnostics">
+      <h2>Wireless Channel Visualization</h2>
+      <p class="section-description">These are CSI-to-CSI properties of the dataset across prediction horizons, <strong>not prediction NMSE</strong>. The curves summarize 797 trajectories per scenario.</p>
+      <div class="chart-grid">
+        <div class="figure-card chart-card">
+          <div class="chart-heading">
+            <div><h3 id="metric-title">Channel correlation</h3><p id="metric-description">Median normalized complex-channel correlation, relative to the prediction start.</p></div>
+            <label for="metric-select">Metric
+              <select id="metric-select">
+                <option value="correlation_median">Correlation</option>
+                <option value="change_db_median">Relative change (dB)</option>
+                <option value="shape_error_db_median">Shape error (dB)</option>
+              </select>
+            </label>
+          </div>
+          <div id="evolution-chart" class="chart" role="img" aria-label="Channel evolution for stable LoS, stable NLoS and edge transition"></div>
+          <div class="legend"><span><i class="los"></i>Stable LoS</span><span><i class="nlos"></i>Stable NLoS</span><span><i class="edge"></i>Edge transition</span></div>
+        </div>
+        <aside class="figure-card visibility-card">
+          <h3>Subarray Path Visibility</h3>
+          <p>In edge transition, center-link LoS can disappear while some physical subarrays retain a visible path.</p>
+          <div id="visibility-chart" class="mini-chart" role="img" aria-label="Edge-transition array LoS visibility across the horizon"></div>
+          <p class="small">Center-link and subarray-level visibility are different quantities.</p>
+          <p class="stat"><strong id="edge-corr">--</strong><span>Median edge-transition correlation at 100 ms</span></p>
+        </aside>
+      </div>
+      <p class="note">Statistics use stored CSI at 1, 5, 10, ..., 100 ms. This diagnostic cohort does not cover every trajectory in the complete dataset.</p>
+    </section>
 
-    <section class="section wrap" id="structure"><div class="section-head"><div><p class="eyebrow">03 / DATA ORGANIZATION</p><h2>Wireless and sensing, aligned.</h2><p>The static page previews a small verified slice; the complete CSI and sensor files remain in dataset storage, not in this GitHub repository.</p></div><span class="section-index">03</span></div>
-      <div class="structure-grid"><article><span class="structure-num">01</span><h3>Historical CSI</h3><p>10 saved channel instants before the prediction origin.</p></article><article><span class="structure-num">02</span><h3>Future CSI</h3><p>12 target horizons from 1 to 100 ms, saved for evaluation.</p></article><article><span class="structure-num">03</span><h3>Environment sensing</h3><p>RGB, LiDAR and position records with their own timestamps and availability.</p></article><article><span class="structure-num">04</span><h3>Propagation metadata</h3><p>Scenario, speed, layout and path-visibility descriptors where available.</p></article></div>
-      <div class="provenance"><strong>Provenance & limitations</strong><p>Layout and replay imagery are saved from the V8 Sionna workbench. The chart is exported from <code>analysis/v8_temporal_horizon_summary.csv</code>; the visibility inset uses <code>analysis/v8_edge_los_visibility_summary.json</code>. This public preview does not expose raw CSI tensors, complete point clouds, or all trajectories. No curve on this page is a model result.</p></div>
+    <section class="panel" id="structure">
+      <h2>Dataset Organization</h2>
+      <p class="section-description">The complete CSI and sensor files remain in dataset storage; this page provides a compact, verified public preview.</p>
+      <div class="data-grid">
+        <article><h3>Historical CSI</h3><p>10 channel instants before the prediction origin.</p></article>
+        <article><h3>Future CSI</h3><p>12 target horizons from 1 to 100 ms.</p></article>
+        <article><h3>Environment Sensing</h3><p>RGB, LiDAR and position records with timestamps.</p></article>
+        <article><h3>Propagation Metadata</h3><p>Scenario, layout, speed and path visibility where available.</p></article>
+      </div>
+      <p class="source">Data sources: <code>analysis/v8_temporal_horizon_summary.csv</code>, <code>analysis/v8_edge_los_visibility_summary.json</code>, and saved V8 workbench captures. No curve on this page represents a model result.</p>
     </section>
   </main>
-  <footer><div class="wrap"><span>6GXLMIMODatasets <span class="muted-separator">/</span> Ground-level V8 preview</span><a href="index.html">Return to main site ↑</a></div></footer>
+
+  <footer class="site-footer">@ 2026 FutureComm Lab. All rights reserved.</footer>
 </body>
 </html>

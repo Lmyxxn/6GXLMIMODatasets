@@ -1,4 +1,4 @@
-const palette = {stable_los: '#4379a4', stable_nlos: '#c68b4f', edge_transition: '#c66a59'};
+const palette = {stable_los: '#2563eb', stable_nlos: '#d97706', edge_transition: '#dc2626'};
 const labels = {stable_los: 'Stable LoS', stable_nlos: 'Stable NLoS', edge_transition: 'Edge transition'};
 const metrics = {
   correlation_median: {title: 'Channel correlation', description: 'Median normalized complex-channel correlation, relative to the prediction start.', min: 0, max: 1, ticks: [0, .25, .5, .75, 1], format: value => value.toFixed(2)},
@@ -38,7 +38,7 @@ function visibilitySvg(rows) {
   const y = value => 8 + (1 - value) * 68;
   let body = '';
   for (const tick of [0, .5, 1]) body += svgLine(24, y(tick), 284, y(tick), '#e4eaed');
-  body += `<polyline fill="none" stroke="#007f89" stroke-width="2.5" points="${rows.map(row => `${x(row.horizon_ms)},${y(row.physical_los_fraction_median)}`).join(' ')}"/>`;
+  body += `<polyline fill="none" stroke="#0d9488" stroke-width="2.5" points="${rows.map(row => `${x(row.horizon_ms)},${y(row.physical_los_fraction_median)}`).join(' ')}"/>`;
   body += `<polyline fill="none" stroke="#b7c5cc" stroke-width="2" stroke-dasharray="4 3" points="${rows.map(row => `${x(row.horizon_ms)},${y(row.center_los_fraction)}`).join(' ')}"/>`;
   body += '<text x="24" y="95" fill="#81939e" font-size="9">0 ms</text><text x="284" y="95" text-anchor="end" fill="#81939e" font-size="9">100 ms</text>';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${body}</svg>`;
