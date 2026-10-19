@@ -57,7 +57,7 @@ source = PROJECT / "output" / "v8_web_recording_HD_6x4_20261013" / "layout_clip_
 copy2(source, OUT / "layout_clip.jpg")
 
 preview = {
-    "dataset": "XLMIMO_V8_7Layouts_10ms_RT22 + speed20_extension",
+    "dataset": "Ground-level XL-MIMO Dataset",
     "description": "Ground-level Sionna RT; compact static preview, not the full dataset",
     "array_antennas": 4096,
     "layouts": 7,
@@ -72,7 +72,7 @@ preview = {
         "scenario": "edge_transition",
         "speed_mps": 20,
         "frames": [frames[i] for i in sorted(frames)],
-        "source": "Saved V8 workbench capture; these are real preview frames, not new RT solves",
+        "source": "Saved ground-level XL-MIMO dataset capture; these are real preview frames, not new RT solves",
     },
     "provenance": {
         "analysis": "analysis/v8_temporal_horizon_summary.csv",

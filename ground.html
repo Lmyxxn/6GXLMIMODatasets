@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ground-level XL-MIMO channel dataset preview with Sionna RT scenes, multimodal sensing, and channel-evolution diagnostics.">
-  <title>Ground-level Dataset | 6G XL-MIMO Datasets</title>
+  <title>Ground-level XL-MIMO Dataset | 6G XL-MIMO Datasets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ground.css?v=2">
-  <script defer src="ground.js?v=2"></script>
+  <script defer src="ground.js?v=3"></script>
 </head>
 <body>
   <header class="site-header">
@@ -17,7 +17,7 @@
       <a class="site-name" href="index.html">6G XL-MIMO Datasets</a>
       <nav aria-label="Page navigation">
         <a href="index.html">Overview</a>
-        <a class="active" href="ground.html?v=2" aria-current="page">Ground-level Dataset</a>
+        <a class="active" href="ground.html?v=3" aria-current="page">Ground-level XL-MIMO Dataset</a>
         <a href="index.html">Back to Main Site</a>
       </nav>
     </div>
@@ -37,9 +37,9 @@
 
     <section class="panel" id="scene">
       <h2>Scene and Mobility Visualization</h2>
-      <p class="section-description">A saved V8 workbench view shows the ground layout, user movement, Sionna RT propagation, and synchronized RGB and LiDAR sensing for one representative trajectory.</p>
+      <p class="section-description">A saved view of the ground-level XL-MIMO dataset shows the layout, user movement, Sionna RT propagation, and synchronized RGB and LiDAR sensing for one representative trajectory.</p>
       <figure class="figure-card scene-figure">
-        <img src="ground-assets/layout_clip.jpg" alt="Saved V8 ground-level Sionna RT workbench showing the scene, rays, RGB views and LiDAR">
+        <img src="ground-assets/layout_clip.jpg" alt="Ground-level XL-MIMO dataset scene with Sionna RT rays, RGB views and LiDAR">
         <figcaption>Layout 00, edge transition, 20 m/s. This is a recorded sample, not a live ray-tracing service.</figcaption>
       </figure>
     </section>
@@ -49,7 +49,7 @@
       <p class="section-description">Move through the saved frames of trajectory <strong>L00_edge_v20_000</strong>. Each frame shows the ray-tracing and sensing views captured at the selected instant.</p>
       <div class="figure-card replay-card">
         <div class="figure-title">Edge transition <span id="frame-badge">t = 0 ms</span></div>
-        <img id="replay-image" src="ground-assets/edge_00.jpg" alt="Saved V8 edge-transition workbench at 0 ms">
+        <img id="replay-image" src="ground-assets/edge_00.jpg" alt="Ground-level XL-MIMO dataset edge-transition view at 0 ms">
         <div class="replay-controls">
           <button id="play-button" type="button" aria-label="Play trajectory">&#9654;</button>
           <label for="frame-range">Prediction horizon</label>
@@ -99,7 +99,7 @@
         <article><h3>Environment Sensing</h3><p>RGB, LiDAR and position records with timestamps.</p></article>
         <article><h3>Propagation Metadata</h3><p>Scenario, layout, speed and path visibility where available.</p></article>
       </div>
-      <p class="source">Data sources: <code>analysis/v8_temporal_horizon_summary.csv</code>, <code>analysis/v8_edge_los_visibility_summary.json</code>, and saved V8 workbench captures. No curve on this page represents a model result.</p>
+      <p class="source">Data sources: channel-evolution summaries, LoS-visibility records, and saved ground-level XL-MIMO dataset captures. No curve on this page represents a model result.</p>
     </section>
   </main>
 

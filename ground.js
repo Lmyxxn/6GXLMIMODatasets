@@ -68,7 +68,7 @@ async function main() {
   const showFrame = () => {
     const frame = data.replay.frames[Number(slider.value)];
     document.getElementById('replay-image').src = `ground-assets/${frame.image}`;
-    document.getElementById('replay-image').alt = `Saved V8 edge-transition workbench at ${frame.horizon_ms} ms`;
+    document.getElementById('replay-image').alt = `Ground-level XL-MIMO dataset edge-transition view at ${frame.horizon_ms} ms`;
     document.getElementById('frame-badge').textContent = `t = ${frame.horizon_ms} ms`;
     document.getElementById('frame-time').textContent = `${frame.horizon_ms} ms`;
   };
