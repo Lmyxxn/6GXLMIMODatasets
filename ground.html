@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="ground.css?v=4">
+  <link rel="stylesheet" href="ground.css?v=5">
   <script defer src="ground.js?v=4"></script>
 </head>
 <body>
@@ -27,7 +27,8 @@
   <main class="site-main">
     <section class="panel intro" aria-labelledby="page-title">
       <h1 id="page-title">Ground-level XL-MIMO Dataset</h1>
-      <p>The CSI-EnvFormer dataset pairs ray-traced channel state information (CSI) with base-station RGB and LiDAR observations and UE position and motion records. It covers line-of-sight (LoS) mobility at 2, 5, 10, and 20 m/s in simulated urban layouts.</p>
+      <p>This dataset supports environment-assisted channel prediction for extremely large-scale MIMO (XL-MIMO). It pairs ray-traced channel state information (CSI) with synchronized RGB and LiDAR observations at the base station and position and velocity records for the mobile user. It covers line-of-sight mobility at 2, 5, 10, and 20 m/s across 12 simulated urban layouts, including two reserved for unseen-layout testing.</p>
+      <p class="dataset-location">Dataset repository <a href="https://huggingface.co/datasets/lmyxxn/Ground-XL-MIMO-Dataset">Hugging Face</a> <span>(release pending)</span></p>
       <dl class="intro-facts">
         <div><dt>Trajectories</dt><dd>2,924</dd></div>
         <div><dt>Urban layouts</dt><dd>12</dd></div>

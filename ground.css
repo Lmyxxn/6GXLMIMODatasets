@@ -32,6 +32,9 @@ h2 { font-size: clamp(23px, 3vw, 29px); letter-spacing: -.027em; margin-bottom: 
 p { color: var(--text); }
 .intro { border-top: 4px solid var(--accent); }
 .intro > p { max-width: 780px; }
+.dataset-location { margin-top: 12px; font-size: 14px; }
+.dataset-location a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.dataset-location span { color: var(--muted); }
 .intro-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
 .intro-facts div { display: grid; align-content: start; gap: 2px; background: #f4f8f7; border: 1px solid var(--line); border-radius: 8px; padding: 13px 16px; }
 .intro-facts dt { grid-row: 2; color: var(--muted); font-size: 13px; }
