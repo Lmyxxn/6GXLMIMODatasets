@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ground-level XL-MIMO channel dataset preview with Sionna RT scenes, multimodal sensing, and channel-evolution diagnostics.">
+  <meta name="description" content="The CSI-EnvFormer ground-level XL-MIMO dataset with 2,924 trajectories across 12 simulated urban layouts and synchronized CSI, RGB, LiDAR, and position records.">
   <title>Ground-level XL-MIMO Dataset | 6G XL-MIMO Datasets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="ground.css?v=2">
-  <script defer src="ground.js?v=3"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ground.css?v=4">
+  <script defer src="ground.js?v=4"></script>
 </head>
 <body>
   <header class="site-header">
@@ -17,92 +17,95 @@
       <a class="site-name" href="index.html">6G XL-MIMO Datasets</a>
       <nav aria-label="Page navigation">
         <a href="index.html">Overview</a>
-        <a class="active" href="ground.html?v=3" aria-current="page">Ground-level XL-MIMO Dataset</a>
-        <a href="index.html">Back to Main Site</a>
+        <a class="active" href="ground.html?v=3" aria-current="page">Ground-level dataset</a>
+        <a href="#layouts">Layouts</a>
+        <a href="#splits">Splits</a>
       </nav>
     </div>
   </header>
 
   <main class="site-main">
-    <section class="panel intro" id="overview">
-      <h1>Ground-level XL-MIMO Dataset</h1>
-      <p>This page visualizes a representative part of our current Sionna RT ground-level dataset. It shows an edge-transition trajectory, synchronized sensing views, and measured CSI evolution across three propagation scenarios.</p>
-      <div class="intro-facts" aria-label="Dataset specifications">
-        <div><strong>7</strong><span>Scene layouts</span></div>
-        <div><strong>64 &times; 64</strong><span>Physical array</span></div>
-        <div><strong>10 + 12</strong><span>Historical + future CSI</span></div>
-        <div><strong>10 ms</strong><span>Sensing interval</span></div>
-      </div>
+    <section class="panel intro" aria-labelledby="page-title">
+      <h1 id="page-title">Ground-level XL-MIMO Dataset</h1>
+      <p>The CSI-EnvFormer dataset pairs ray-traced channel state information (CSI) with base-station RGB and LiDAR observations and UE position and motion records. It covers line-of-sight (LoS) mobility at 2, 5, 10, and 20 m/s in simulated urban layouts.</p>
+      <dl class="intro-facts">
+        <div><dt>Trajectories</dt><dd>2,924</dd></div>
+        <div><dt>Urban layouts</dt><dd>12</dd></div>
+        <div><dt>Planar antenna array</dt><dd>64 &times; 64</dd></div>
+        <div><dt>Sensing interval</dt><dd>10 ms</dd></div>
+      </dl>
     </section>
 
-    <section class="panel" id="scene">
-      <h2>Scene and Mobility Visualization</h2>
-      <p class="section-description">A saved view of the ground-level XL-MIMO dataset shows the layout, user movement, Sionna RT propagation, and synchronized RGB and LiDAR sensing for one representative trajectory.</p>
-      <figure class="figure-card scene-figure">
-        <img src="ground-assets/layout_clip.jpg" alt="Ground-level XL-MIMO dataset scene with Sionna RT rays, RGB views and LiDAR">
-        <figcaption>Layout 00, edge transition, 20 m/s. This is a recorded sample, not a live ray-tracing service.</figcaption>
-      </figure>
-    </section>
-
-    <section class="panel" id="replay">
-      <h2>Multimodal Trajectory Visualization</h2>
-      <p class="section-description">Move through the saved frames of trajectory <strong>L00_edge_v20_000</strong>. Each frame shows the ray-tracing and sensing views captured at the selected instant.</p>
-      <div class="figure-card replay-card">
-        <div class="figure-title">Edge transition <span id="frame-badge">t = 0 ms</span></div>
-        <img id="replay-image" src="ground-assets/edge_00.jpg" alt="Ground-level XL-MIMO dataset edge-transition view at 0 ms">
-        <div class="replay-controls">
-          <button id="play-button" type="button" aria-label="Play trajectory">&#9654;</button>
-          <label for="frame-range">Prediction horizon</label>
-          <input id="frame-range" type="range" min="0" max="10" step="1" value="0" aria-label="Select saved sensing frame">
-          <strong id="frame-time">0 ms</strong>
+    <section class="panel" id="layouts" aria-labelledby="layouts-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="layouts-title">Urban layouts</h2>
+          <p>All layouts use the same scale and viewing angle. The rust-colored triangle marks the base-station array center.</p>
         </div>
-        <div class="ticks" aria-hidden="true"><span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100 ms</span></div>
-      </div>
-      <p class="note">Future sensing frames are displayed for dataset inspection only. They are not available to a one-shot predictor at t = 0.</p>
-    </section>
-
-    <section class="panel" id="diagnostics">
-      <h2>Wireless Channel Visualization</h2>
-      <p class="section-description">These are CSI-to-CSI properties of the dataset across prediction horizons, <strong>not prediction NMSE</strong>. The curves summarize 797 trajectories per scenario.</p>
-      <div class="chart-grid">
-        <div class="figure-card chart-card">
-          <div class="chart-heading">
-            <div><h3 id="metric-title">Channel correlation</h3><p id="metric-description">Median normalized complex-channel correlation, relative to the prediction start.</p></div>
-            <label for="metric-select">Metric
-              <select id="metric-select">
-                <option value="correlation_median">Correlation</option>
-                <option value="change_db_median">Relative change (dB)</option>
-                <option value="shape_error_db_median">Shape error (dB)</option>
-              </select>
-            </label>
-          </div>
-          <div id="evolution-chart" class="chart" role="img" aria-label="Channel evolution for stable LoS, stable NLoS and edge transition"></div>
-          <div class="legend"><span><i class="los"></i>Stable LoS</span><span><i class="nlos"></i>Stable NLoS</span><span><i class="edge"></i>Edge transition</span></div>
+        <div class="view-switch" role="group" aria-label="Layout view" hidden>
+          <button type="button" data-view="3d" aria-pressed="true">3D view</button>
+          <button type="button" data-view="plan" aria-pressed="false">Top view</button>
         </div>
-        <aside class="figure-card visibility-card">
-          <h3>Subarray Path Visibility</h3>
-          <p>In edge transition, center-link LoS can disappear while some physical subarrays retain a visible path.</p>
-          <div id="visibility-chart" class="mini-chart" role="img" aria-label="Edge-transition array LoS visibility across the horizon"></div>
-          <p class="small">Center-link and subarray-level visibility are different quantities.</p>
-          <p class="stat"><strong id="edge-corr">--</strong><span>Median edge-transition correlation at 100 ms</span></p>
-        </aside>
       </div>
-      <p class="note">Statistics use stored CSI at 1, 5, 10, ..., 100 ms. This diagnostic cohort does not cover every trajectory in the complete dataset.</p>
+
+      <h3 class="group-title">Seen layouts</h3>
+      <div class="layout-grid">
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l00-3d.webp" data-layout="l00" alt="3D view of urban layout L00" width="720" height="475"><figcaption>L00</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l01-3d.webp" data-layout="l01" alt="3D view of urban layout L01" width="720" height="475"><figcaption>L01</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l02-3d.webp" data-layout="l02" alt="3D view of urban layout L02" width="720" height="475"><figcaption>L02</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l03-3d.webp" data-layout="l03" alt="3D view of urban layout L03" width="720" height="475"><figcaption>L03</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l04-3d.webp" data-layout="l04" alt="3D view of urban layout L04" width="720" height="475" loading="lazy"><figcaption>L04</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l07-3d.webp" data-layout="l07" alt="3D view of urban layout L07" width="720" height="475" loading="lazy"><figcaption>L07</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l08-3d.webp" data-layout="l08" alt="3D view of urban layout L08" width="720" height="475" loading="lazy"><figcaption>L08</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l09-3d.webp" data-layout="l09" alt="3D view of urban layout L09" width="720" height="475" loading="lazy"><figcaption>L09</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l10-3d.webp" data-layout="l10" alt="3D view of urban layout L10" width="720" height="475" loading="lazy"><figcaption>L10</figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l11-3d.webp" data-layout="l11" alt="3D view of urban layout L11" width="720" height="475" loading="lazy"><figcaption>L11</figcaption></figure>
+      </div>
+
+      <h3 class="group-title held-out">Unseen layouts <span>Held out for testing</span></h3>
+      <div class="layout-grid">
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l05-3d.webp" data-layout="l05" alt="3D view of unseen urban layout L05" width="720" height="475" loading="lazy"><figcaption>L05 <span>48 test trajectories</span></figcaption></figure>
+        <figure class="layout-card"><img src="ground-assets/paper-layouts/l06-3d.webp" data-layout="l06" alt="3D view of unseen urban layout L06" width="720" height="475" loading="lazy"><figcaption>L06 <span>46 test trajectories</span></figcaption></figure>
+      </div>
     </section>
 
-    <section class="panel" id="structure">
-      <h2>Dataset Organization</h2>
-      <p class="section-description">The complete CSI and sensor files remain in dataset storage; this page provides a compact, verified public preview.</p>
-      <div class="data-grid">
-        <article><h3>Historical CSI</h3><p>10 channel instants before the prediction origin.</p></article>
-        <article><h3>Future CSI</h3><p>12 target horizons from 1 to 100 ms.</p></article>
-        <article><h3>Environment Sensing</h3><p>RGB, LiDAR and position records with timestamps.</p></article>
-        <article><h3>Propagation Metadata</h3><p>Scenario, layout, speed and path visibility where available.</p></article>
+    <section class="panel" id="splits" aria-labelledby="splits-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="splits-title">Dataset splits</h2>
+          <p>The seen test set contains 70 trajectories per speed. L05 and L06 are reserved for cross-layout generalization.</p>
+        </div>
       </div>
-      <p class="source">Data sources: channel-evolution summaries, LoS-visibility records, and saved ground-level XL-MIMO dataset captures. No curve on this page represents a model result.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Split</th><th scope="col">Layouts</th><th scope="col">Trajectories</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Training</th><td>L00–L04, L07–L11</td><td>2,100</td></tr>
+            <tr><th scope="row">Validation</th><td>L00–L04, L07–L11</td><td>450</td></tr>
+            <tr><th scope="row">Seen-layout test</th><td>L00–L04, L07–L11</td><td>280</td></tr>
+            <tr><th scope="row">Unseen-layout test</th><td>L05, L06</td><td>94</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" id="structure" aria-labelledby="structure-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="structure-title">Channel and sensing records</h2>
+          <p>Channels are simulated at 7 GHz with Sionna RT. The wireless slot is 1 ms, and sensing updates arrive every 10 ms.</p>
+        </div>
+      </div>
+      <div class="record-grid">
+        <article><h3>Complex CSI</h3><p>10 historical CSI slots and 12 targets at 1, 5, 10, 20, …, 100 ms.</p></article>
+        <article><h3>Multi-view RGB</h3><p>Three 384 &times; 384 views from left, center, and right base-station cameras, rendered with Mitsuba.</p></article>
+        <article><h3>LiDAR</h3><p>Co-located 64 &times; 768 ray-cast scans with an 80 m maximum range.</p></article>
+        <article><h3>Position and motion</h3><p>Timestamped UE coordinates and velocity aligned with the sensing frames.</p></article>
+      </div>
+      <p class="record-note">Ray-traced path labels are included in the training, validation, and seen-layout test splits.</p>
     </section>
   </main>
 
-  <footer class="site-footer">@ 2026 FutureComm Lab. All rights reserved.</footer>
+  <footer class="site-footer">&copy; 2026 FutureComm Lab. All rights reserved.</footer>
 </body>
 </html>
